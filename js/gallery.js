@@ -89,7 +89,6 @@ function galleryMarkup() {
         </li>`;
     })
     .join("");
-  console.log(result);
   gallery.innerHTML = result;
 }
 galleryMarkup();
@@ -101,12 +100,10 @@ function showImageModal(source) {
 `,
     {
       onShow: (modal) => {
-        console.log("add listener");
         document.addEventListener("keydown", onModalClose);
       },
 
       onClose: (modal) => {
-        console.log("remove listener");
         document.removeEventListener("keydown", onModalClose);
       },
     }
@@ -115,7 +112,6 @@ function showImageModal(source) {
   modal.show();
 
   function onModalClose(e) {
-    console.log(e.code);
     if (e.code === "Escape") {
       modal.close();
     }
