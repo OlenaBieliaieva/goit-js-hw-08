@@ -66,7 +66,7 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 gallery.addEventListener("click", (e) => {
-  e.preventDefault;
+  e.preventDefault();
   if (e.target.nodeName !== "IMG") return;
   const liImage = e.target.closest("img");
   const source = liImage.dataset.source;
@@ -81,7 +81,6 @@ function galleryMarkup() {
             <a class="gallery-link" href="${original}">
                 <img class="gallery-image" src="${preview}"
                     data-source="${original}"
-                    // onclick = "return false"
                     alt="${description}" 
                     width = "360" 
                     height = "200"/>
@@ -96,7 +95,7 @@ galleryMarkup();
 function showImageModal(source) {
   const modal = basicLightbox.create(
     `
-    <img src="${source}" width="1112" height="640 ">
+    <img src="${source}" width="1112" height="640">
 `,
     {
       onShow: (modal) => {
